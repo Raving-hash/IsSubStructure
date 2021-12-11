@@ -11,8 +11,7 @@ class TreeNode {
 class Solution {
     //对A做先序遍历，确定ROOT为A，然后开始递归
     public boolean isSubStructure(TreeNode A, TreeNode B) {
-            if(A == null) return false;
-            if(B == null) return false;
+            if(A == null || B == null) return false;
             return dfs(A,B) || isSubStructure(A.left,B) || isSubStructure(A.right,B);
     }
     //对A为B的ROOT进行递归，确定B是否为A的子树
